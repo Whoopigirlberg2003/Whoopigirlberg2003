@@ -1,0 +1,50 @@
+{
+    "name": "brfinance",
+    "description": "Scraping package to simplify access to financial data of brazilian companies and institutions.",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "version": "1.0.12",
+    "author": "Bruno Lobo <me@brunolobo.xyz>",
+    "license": "Apache 2.0",
+    "keywords": [
+        "b3",
+        "anbima"
+    ],
+    "scripts": {
+        "lint": "eslint --fix . --ext .ts,.tsx",
+        "dev": "./node_modules/.bin/nodemon",
+        "build": "tsc",
+        "prepare": "npm run build",
+        "prepublishOnly": "npm run lint",
+        "preversion": "npm run lint",
+        "version": "npm run format && git add -A src",
+        "postversion": "git push && git push --tags"
+    },
+    "devDependencies": {
+        "@types/axios": "^0.14.0",
+        "@types/node": "^16.3.3",
+        "@types/puppeteer": "^5.4.4",
+        "@types/x-ray": "^2.3.3",
+        "@typescript-eslint/eslint-plugin": "^4.28.4",
+        "@typescript-eslint/parser": "^4.28.4",
+        "eslint": "^7.31.0",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-prettier": "^3.4.0",
+        "eslint-plugin-unused-imports": "^1.1.2",
+        "nodemon": "^2.0.12",
+        "prettier": "^2.3.2",
+        "ts-node": "^10.1.0",
+        "typescript": "^4.3.5"
+    },
+    "dependencies": {
+        "@supercharge/promise-pool": "^1.7.0",
+        "axios": "^1.6.0",
+        "html-table-to-json": "^1.0.0",
+        "moment": "^2.29.1",
+        "puppeteer": "^13.3.0",
+        "tabletojson": "^2.0.7",
+        "unzipper": "^0.12.1",
+        "x-ray": "^2.3.4",
+        "xlsx": "^0.18.0"
+    }
+}
